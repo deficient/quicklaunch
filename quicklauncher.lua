@@ -1,17 +1,17 @@
 
-local setmetatable = setmetatable
 local util = require("awful.util")
 local wbutton = require("awful.widget.button")
 local button = require("awful.button")
 local tooltip = require("awful.tooltip")
 
-module("quicklauncher")
+-- quicklauncher
+local quicklauncher = { mt = {} }
 
 --- Create a button widget which will launch a command.
 -- @param args Standard widget table arguments, plus image for the image path
 -- and command for the command to run on click, or either menu to create menu.
 -- @return A launcher widget.
-function new(args)
+function quicklauncher.new(args)
     if not args.command and not args.action and not args.menu then return end
     local w = wbutton(args)
     if not w then return end
@@ -37,5 +37,8 @@ function new(args)
     return w
 end
 
-setmetatable(_M, { __call = function (_, ...) return new(...) end })
+function quicklauncher.mt:__call(...)
+    return quicklauncher.new(...)
+end
 
+return setmetatable(quicklauncher, quicklauncher.mt)
