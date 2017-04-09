@@ -16,12 +16,6 @@ local function table_empty(tab)
     return true
 end
 
-local function table_map(tab, fun)
-    local ret = {}
-    for k, v in pairs(tab) do ret[k] = fun(v, k) end
-    return ret
-end
-
 local function table_lookup_key(tab, lookup)
     local ret = {}
     for k, v in pairs(tab) do ret[lookup[k] or k] = v end
@@ -34,14 +28,6 @@ local function make_action(action)
     elseif type(action) == "function" then
         return function() action() end    -- don't forward arguments!
     end
-end
-
-local function menu_cb(fun)
-    return function(item, menu) return false, fun end
-end
-
-local function menu_item(args)
-    return {args[1], menu_cb(make_action(args[2]))}
 end
 
 
@@ -102,7 +88,7 @@ function quicklaunch:widget(args)
     local lclick, rclick
 
     if args.menu then
-        local menu = awful.menu({ items=table_map(args.menu, menu_item) })
+        local menu = awful.menu( args.menu )
         rclick = function() menu:toggle() end
         lclick = rclick
     end

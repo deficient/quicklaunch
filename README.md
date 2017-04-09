@@ -29,8 +29,8 @@ local launchbar = quicklaunch:launchbar({
     { "Konversation", "konversation.png", "konversation",   },
     {                                                       },
     { "Terminal",     "terminator.png",   "termite",        {
-        {"~/dev",     { "termite", "-d", "~/dev"   }},
-        {"/media",    { "termite", "-d", "~/media" }},
+        {"~/dev",     "termite -d ~/dev"    },
+        {"/media",    "termite -d ~/media"  },
     }},
 })
 
@@ -39,19 +39,33 @@ local launchbar = quicklaunch:launchbar({
 left_layout:add(launchbar)
 ```
 
-The constructor expects a list of items which can be
+### Arguments
 
-- empty tables (separator)
-- tables of three or four elements `{ tooltip, icon, action, [menu] }`
+The constructor expects a list of **items** which can each be
 
-An action can be
+- an empty table (separator)
+- a table of three or four elements `{ tooltip, icon, action, [menu] }`
 
-- a single command string
-- a list of command line arguments
+An **action** can be
+
+- a command string
+- a table (list of command line arguments)
 - a function to be executed
 
-A menu must be given as a list of tables `{ text, action }` with actions as
-defined above. Currently, submenus are not supported.
+A **menu** must be given as a list of tables `{ text, menu-action, [icon] }`.
+
+Be careful about **menu-action**. These are passed directly to
+[awful.menu](https://awesomewm.org/doc/api/libraries/awful.menu.html#new) and
+can be either
+
+- a command string
+- a table (submenu)
+- a function to be executed. Make sure that this function ignores it's
+  arguments and does not return values!
+
+(If the function returns values, awful will understand them as
+`visible, action = f()` and keep the menu alive if `visible` is truthy and
+execute `action`)
 
 
 ### Requirements
