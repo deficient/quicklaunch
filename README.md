@@ -11,7 +11,7 @@ Drop the script into your awesome config folder. Suggestion:
 
 ```bash
 cd ~/.config/awesome
-git clone https://github.com/coldfix/awesome-quicklaunch.git
+git clone https://github.com/deficient/quicklaunch.git
 ```
 
 
@@ -20,7 +20,7 @@ git clone https://github.com/coldfix/awesome-quicklaunch.git
 In your `~/.config/awesome/rc.lua`:
 
 ```lua
-local quicklaunch = require("awesome-quicklaunch")
+local quicklaunch = require("quicklaunch")
 
 
 -- create widget
