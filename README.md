@@ -25,7 +25,8 @@ local quicklaunch = require("quicklaunch")
 
 -- create widget
 local launchbar = quicklaunch:launchbar({
-    { "Pidgin",       "pidgin.png",       "pidgin-debug",   },
+    { "Mumble",       "mumble.svg",       "mumble",         },
+    { "Pidgin",       "pidgin.png",       "pidgin",         },
     { "Konversation", "konversation.png", "konversation",   },
     {                                                       },
     { "Terminal",     "terminator.png",   "termite",        {

@@ -48,6 +48,7 @@ quicklaunch.icon_path = {
     "/usr/share/icons/hicolor/48x48/apps",
     "/usr/share/icons/hicolor/48x48/mimetypes",
     "/usr/share/icons/gnome/48x48/apps",
+    "/usr/share/icons/hicolor/scalable/apps",
 }
 
 quicklaunch.separator = wibox.widget.textbox()
