@@ -54,6 +54,16 @@ quicklaunch.icon_path = {
 quicklaunch.separator = wibox.widget.textbox()
 quicklaunch.separator:set_markup('<span color="red"> | </span>')
 
+-- manage globally: at most one menu for all controls
+function menu_visible(menu)
+    if quicklaunch.menu and quicklaunch.menu ~= menu then
+        quicklaunch.menu:hide()
+        quicklaunch.menu = nil
+    end
+    if menu.wibox.visible then
+        quicklaunch.menu = menu
+    end
+end
 
 -- module definition
 function quicklaunch:bar(items)
@@ -92,6 +102,9 @@ function quicklaunch:widget(args)
         local menu = awful.menu( args.menu )
         rclick = function() menu:toggle() end
         lclick = rclick
+        menu.wibox:connect_signal("property::visible", function()
+          menu_visible(menu)
+        end)
     end
 
     if args.action then
