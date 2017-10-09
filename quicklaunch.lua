@@ -92,7 +92,6 @@ function quicklaunch:widget(args)
         local menu = awful.menu( args.menu )
         rclick = function() menu:toggle() end
         lclick = rclick
-        menu.wibox:connect_signal("mouse::leave", function() menu:hide() end)
     end
 
     if args.action then
