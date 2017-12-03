@@ -1,5 +1,7 @@
 ## awesome-quicklaunch
 
+![Screenshot](/screenshot.png?raw=true "Screenshot")
+
 ### Description
 
 Simple quicklaunchbar widget.
