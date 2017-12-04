@@ -1,15 +1,13 @@
-## awesome-quicklaunch
-
-![Screenshot](/screenshot.png?raw=true "Screenshot")
-
-### Description
+## awesome.quicklaunch
 
 Simple quicklaunchbar widget.
+
+![Screenshot](/screenshot.png?raw=true "Screenshot")
 
 
 ### Installation
 
-Drop the script into your awesome config folder. Suggestion:
+Simply drop the script into your awesome config folder, e.g.:
 
 ```bash
 cd ~/.config/awesome
@@ -26,7 +24,7 @@ local quicklaunch = require("quicklaunch")
 
 
 -- create widget
-local launchbar = quicklaunch:launchbar({
+local launchbar = quicklaunch:launchbar {
     { "Mumble",       "mumble.svg",       "mumble",         },
     { "Pidgin",       "pidgin.png",       "pidgin",         },
     { "Konversation", "konversation.png", "konversation",   },
@@ -35,7 +33,7 @@ local launchbar = quicklaunch:launchbar({
         {"~/dev",     "termite -d ~/dev"    },
         {"/media",    "termite -d ~/media"  },
     }},
-})
+}
 
 
 -- add the widget to your wibox
@@ -73,4 +71,4 @@ execute `action`)
 
 ### Requirements
 
-* [awesome 4.0](http://awesome.naquadah.org/) or possibly 3.5
+* [awesome 4.0](http://awesome.naquadah.org/). May work on 3.5 with minor changes.
