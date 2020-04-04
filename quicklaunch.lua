@@ -40,7 +40,9 @@ local quicklaunch = {}
 -- some defaults:
 quicklaunch.height = 24
 quicklaunch.icon_path = {
+    os.getenv("XDG_DATA_HOME") .. "/icons",
     os.getenv("HOME") .. "/.icons",
+    os.getenv("HOME") .. "/.local/share/icons",
     "/usr/share/icons/hicolor/24x24/apps",
     "/usr/share/icons/hicolor/24x24/mimetypes",
     "/usr/share/icons/gnome/24x24/apps",
