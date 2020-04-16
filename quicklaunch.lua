@@ -47,8 +47,12 @@ quicklaunch.icon_path = {
     "/usr/share/icons/hicolor/24x24/mimetypes",
     "/usr/share/icons/gnome/24x24/apps",
     "/usr/share/pixmaps",
+    "/usr/share/icons/hicolor/32x32/apps",
+    "/usr/share/icons/hicolor/32x32/mimetypes",
     "/usr/share/icons/hicolor/48x48/apps",
     "/usr/share/icons/hicolor/48x48/mimetypes",
+    "/usr/share/icons/hicolor/64x64/apps",
+    "/usr/share/icons/hicolor/64x64/mimetypes",
     "/usr/share/icons/gnome/48x48/apps",
     "/usr/share/icons/hicolor/scalable/apps",
 }
