@@ -1,3 +1,6 @@
+**This repository has been assimilated into** https://github.com/deficient/deficient
+
+
 ## awesome.quicklaunch
 
 Simple quicklaunchbar widget.
